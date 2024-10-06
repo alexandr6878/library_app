@@ -148,6 +148,7 @@ class LibraryApp:
       if (book.title == title):
         self.library.borrowed_books.remove(book)
         book.is_borrowed = False
+        self.title_entry.delete(0, tk.END)
         messagebox.showinfo("Success", f"You have returned '{title}'.")
       else:
         messagebox.showwarning("Error", f"'{title}' is not available.")
